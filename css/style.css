@@ -1,0 +1,227 @@
+/* === Общие стили === */
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  color: #212529;
+}
+
+/* === Контейнеры === */
+.container { /*основно контейнер который центрирует содержимое*/
+  max-width: 1140x;
+  margin: 0 auto;
+}
+
+/* === Шапка и навигация === */
+header .nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  transition: color 0.3s ease; /*плавное изменение цвета при наведении*/
+}
+
+header .nav-link:hover,
+header .nav-link.active {
+  color: #574f61 !important;/*При наведении мышкой или активном пункте меню цвет ссылки меняется на темно-фиолетовый*/
+}
+
+.logo {/*лого сайта*/
+  font-size: 1.8rem;
+  font-family: 'Manrope', sans-serif;
+  color: #333;
+  text-decoration: none;/*убирает подчёркивания у ссылки*/
+}
+
+/* === главная картинка === */
+.hero {
+  height: 65vh; /* Высота секции */
+}
+.hero .container {
+  display: flex; /*Используем Flexbox для расположения элементов*/
+  align-items: center; /*Вертикальное выравнивание по центру*/
+  justify-content: center; /*Горизонтальное*/
+}
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border: none;
+  box-shadow: none; /*тень*/
+  border-radius: 0; /*закругления*/
+}
+
+
+/* === Карточки === */
+.card {
+  border: none; /*рамка*/
+  border-radius: 10px;
+  overflow: hidden; /*прячет части, которые выходят за пределы карточки (например, обрезанные изображения)*/
+  transition: transform 0.3s ease; /*анимация*/
+}
+
+.card:hover {
+  transform: translateY(-5px); /*приподнятие при наведении*/
+}
+
+.card-img-top {
+  height: 200px; /*фиксируем высоту*/
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {/*заголовок*/
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.card-text { /*текст*/
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.class-divider { /*полосочка между мастер классами*/
+  border-bottom: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* === Модальное окно === */
+.modal-overlay {
+  position: fixed; /*фиксируем относительно экрана*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* полупрозрачный фон модального окна*/
+  display: none; /*по умолчанию окно скрыто */
+  justify-content: center; /*центрирует модальное окно*/
+  align-items: center;
+  z-index: 1000; /*модальное окно поверх всего*/
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;/*внутрений отступ*/
+  border-radius: 10px;
+  max-width: 900px; /*не больше 900px по ширине*/
+  width: 90%;/*но может быть меньше, например, на мобильных устройствах*/
+  animation: fadeIn 0.3s ease-in-out;/*анимация появления модального окна*/
+}
+
+.modal-body {
+  display: flex;/*эл-ты распологаются рядом*/
+  gap: 20px;
+}
+
+.modal-image {
+  flex: 1;/*занимают 1 часть пространства*/
+  max-width: 400px;
+}
+
+.modal-text {
+  flex: 2;
+}
+
+.close {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #333; 
+  cursor: pointer;/*курсор показывает, что можно кликнуть*/
+}
+
+/* === Заголовки секций === */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* === Кнопки === */
+.btn-outline-dark {
+  background-color: transparent;
+  border: 1px solid #5d5664;/*рамка*/
+  color: #000000;
+  transition: all 0.3s ease; /*анимашка*/
+}
+
+.btn-outline-dark:hover { /*изменение фона при наведении*/
+  background-color: #524f55;
+  color: white;
+}
+
+.btn-sm {/*для маленьких кнопок задаёт чуть меньший размер шрифта*/
+  font-size: 0.9rem;
+}
+
+/* === Модальные карточки экспонатов === */
+.exhibit-card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);/*легкая тень вокруг карточки*/
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.exhibit-card:hover {/*карточка немного приподнимается при навеждении курсора*/
+  transform: translateY(-5px);
+}
+
+.project-card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* === Футер === */
+footer.bg-dark {
+  background-color: #212529 !important;
+}
+
+footer .logo img {
+  height: 40px;
+}
+
+footer .nav-link {
+  color: #fff !important;
+}
+
+/* === Плавный скролл по якорям === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Плашки (badges) === */
+.badge {
+  font-size: 0.85rem;/*маленький размер текста*/
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.badge.bg-light {
+  background-color: #f8f9fa !important;/*светло-серый фон*/
+  color: #6c757d !important;/*темно-серый текст*/
+}
+
+/* === Анимации === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;/*плавно пояляются*/
+}
+

@@ -1,0 +1,40 @@
+/* === Мобильные устройства (max-width: 576px) === */
+@media (max-width: 576px) { /* меньше или ровна 576 пикселям*/
+  .hero {
+    height: 40vh; /*выссота секции в процентах */
+    font-size: 1.2rem;/*размер шрифта*/
+  }
+
+  .section-title {/*заголовок секции*/
+    font-size: 1.2rem;
+  }
+
+  .modal-body { /*элементи теперь друг под другом*/
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-image,
+  .modal-text {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* === Планшеты (min-width: 576px и max-width: 992px) === */
+@media (min-width: 576px) and (max-width: 992px) {
+  .hero {
+    height: 50vh;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* === Десктоп (min-width: 992px) === */
+@media (min-width: 992px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Музей — Viva la Vida</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"  rel="stylesheet">
+
+  <!-- Manrope из Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Внешние стили -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+
+  <!-- Внутренние стили -->
+  <style>
+    .exhibit-card {
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .exhibit-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .exhibit-title {
+      font-size: 1rem;
+      color: #333; 
+    }
+
+    #loadMore {
+      margin-top: 20px;
+      background-color: transparent;
+      border: 1px solid #4a454e;
+      color: #45404b;
+    }
+
+    #loadMore:hover {
+      background-color: #6a11cb;
+      color: white;
+    }
+
+    #loadMore.disabled {
+    background-color: #ccc;
+    color: #6c757d;
+    cursor: not-allowed;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-white shadow-sm py-3">
+  <div class="container d-flex justify-content-center align-items-center position-relative">
+    <a href="index.html" class="logo me-auto"><img src="images/logo.png" alt="Viva la Vida" style="height: 40px;"></a>
+    <nav>
+      <ul class="nav">
+        <li class="nav-item"><a href="classes.html" class="nav-link">Мастер-классы</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
+        <li class="nav-item"><a href="museum.html" class="nav-link">Музей</a></li>
+        <li class="nav-item"><a href="projects.html" class="nav-link">Проекты</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Музей -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-start mb-4">Музей</h2>
+      <p class="text-start mb-4">Здесь можно познакомиться с уникальными произведениями отдельных авторов</p>
+
+      <!-- Карточки экспонатов -->
+      <div id="exhibitsContainer" class="row g-4">
+
+        <!-- Экспонат 1 -->
+        <div class="col-md-3">
+          <div class="card exhibit-card h-100" onclick="showModal('exhibit1')">
+            <img src="images/exhibit1.png" alt="Экспонат 1" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="exhibit-title">Ваза, серия «Апрель»</h5>
+              <p class="card-text">Оксана Шеньк</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Экспонат 2 -->
+        <div class="col-md-3">
+          <div class="card exhibit-card h-100" onclick="showModal('exhibit2')">
+            <img src="images/exhibit2.png" alt="Экспонат 2" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="exhibit-title">Фрагмент древней посуды</h5>
+              <p class="card-text">Александр Тимофеев</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Экспонат 3 -->
+        <div class="col-md-3">
+          <div class="card exhibit-card h-100" onclick="showModal('exhibit3')">
+            <img src="images/exhibit3.png" alt="Экспонат 3" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="exhibit-title">Керамика XX века</h5>
+              <p class="card-text">Марина Лукьянова</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Экспонат 4 -->
+        <div class="col-md-3">
+          <div class="card exhibit-card h-100" onclick="showModal('exhibit4')">
+            <img src="images/exhibit4.png" alt="Экспонат 4" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="exhibit-title">Ритуальный сосуд</h5>
+              <p class="card-text">Анна Родионова</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Экспонат 5 -->
+        <div class="col-md-3">
+          <div class="card exhibit-card h-100" onclick="showModal('exhibit5')">
+            <img src="images/exhibit5.png" alt="Экспонат 5" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="exhibit-title">Крышка от кувшина</h5>
+              <p class="card-text">Станислав Иванов</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Экспонат 6 -->
+        <div class="col-md-3">
+          <div class="card exhibit-card h-100" onclick="showModal('exhibit6')">
+            <img src="images/exhibit6.png" alt="Экспонат 6" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="exhibit-title">Чаша ручной работы</h5>
+              <p class="card-text">Екатерина Смирнова</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Экспонат 7 -->
+        <div class="col-md-3">
+          <div class="card exhibit-card h-100" onclick="showModal('exhibit7')">
+            <img src="images/exhibit7.png" alt="Экспонат 7" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="exhibit-title">Современный стиль</h5>
+              <p class="card-text">Артем Котов</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Экспонат 8 -->
+        <div class="col-md-3">
+          <div class="card exhibit-card h-100" onclick="showModal('exhibit8')">
+            <img src="images/exhibit8.png" alt="Экспонат 8" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="exhibit-title">Краски и текстуры</h5>
+              <p class="card-text">Юлия Петрова</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Кнопка "Ещё" -->
+      <div class="text-center mt-4">
+        <button id="loadMore" class="btn btn-outline-dark">Ещё</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модальное окно -->
+<div id="modalOverlay" class="modal-overlay">
+  <div class="modal-content">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h5 id="modalTitle" class="modal-title fs-4 fw-bold">Название экспоната</h5>
+      <button type="button" class="close btn-close" onclick="hideModal()" aria-label="Close"></button>
+    </div>
+
+    <!-- Изображение слева -->
+    <div class="modal-body d-flex gap-4">
+      <div class="modal-image flex-shrink-0" style="width: 400px;">
+        <img id="modalImage" src="" alt="Изображение проекта" class="w-100 rounded" style="height: 400px; object-fit: cover;">
+      </div>
+
+      <!-- Текст справа -->
+      <div class="modal-text flex-grow-1">
+        <p id="modalDescription" class="mb-4"></p>
+
+        <!-- Характеристики ниже описания -->
+        <ul class="list-unstyled">
+          <li><strong>Автор:</strong> <span id="modalAuthor"></span></li>
+          <li><strong>Год:</strong> <span id="modalYear"></span></li>
+          <li><strong>Материал:</strong> <span id="modalMaterial"></span></li>
+          <li><strong>ДxШxВ:</strong> <span id="modalDimensions"></span></li>
+          <li><strong>Вес:</strong> <span id="modalWeight"></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="index.html" class="logo"><img src="images/logo-footer.png" alt="Viva la Vida" style="height: 40px;"></a>
+        <nav>
+          <ul class="nav">
+            <li class="nav-item"><a href="index.html" class="nav-link text-white">Главная</a></li>
+            <li class="nav-item"><a href="classes.html" class="nav-link text-white">Мастер-классы</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">Музей</a></li>
+            <li class="nav-item"><a href="projects.html" class="nav-link text-white">Проекты</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link text-white">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="mb-0 mt-3">По всем вопросам обращаться сюда:</p>
+      <p class="mb-0">+7 987 654 32 10</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

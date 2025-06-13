@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проекты — Viva la Vida</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"  rel="stylesheet">
+
+ <!-- Manrope из Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Внешние стили -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-white shadow-sm py-3">
+  <div class="container d-flex justify-content-center align-items-center position-relative">
+    <a href="index.html" class="logo me-auto"><img src="images/logo.png" alt="Viva la Vida" style="height: 40px;"></a>
+    <nav>
+      <ul class="nav">
+        <li class="nav-item"><a href="classes.html" class="nav-link">Мастер-классы</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
+        <li class="nav-item"><a href="museum.html" class="nav-link">Музей</a></li>
+        <li class="nav-item"><a href="projects.html" class="nav-link">Проекты</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Проекты -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title text-start mb-4">Проекты</h2>
+
+      <!-- Карточки проектов -->
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card project-card h-100" onclick="showModal('project1')">
+            <img src="images/project1.png" alt="Проект 1" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">Выставка "One-Stop"</h5>
+              <p class="card-text">17.04.2025 18:35</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card project-card h-100" onclick="showModal('project2')">
+            <img src="images/project2.png" alt="Проект 2" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">Выставка "On The Ground"</h5>
+              <p class="card-text">17.04.2025 18:35</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card project-card h-100" onclick="showModal('project3')">
+            <img src="images/project3.png" alt="Проект 3" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">Выставка "Волшебный Лес"</h5>
+              <p class="card-text">17.04.2025 18:35</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card project-card h-100" onclick="showModal('project4')">
+            <img src="images/project4.png" alt="Проект 4" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">Выставка "Кривое Пространство"</h5>
+              <p class="card-text">17.04.2025 18:35</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card project-card h-100" onclick="showModal('project5')">
+            <img src="images/project5.png" alt="Проект 5" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">Выставка "Феномен"</h5>
+              <p class="card-text">17.04.2025 18:35</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card project-card h-100" onclick="showModal('project6')">
+            <img src="images/project6.png" alt="Проект 6" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">Выставка "Эко-керамика"</h5>
+              <p class="card-text">17.04.2025 18:35</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модальное окно -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal-content">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 id="modalTitle" class="modal-title">Название проекта</h5>
+        <button type="button" class="close" onclick="hideModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img id="modalImage" src="" alt="Изображение проекта" class="w-100 rounded" style="height: 400px; object-fit: cover;">
+        </div>
+        <div class="modal-text">
+          <p id="modalDescription"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="index.html" class="logo"><img src="images/logo-footer.png" alt="Viva la Vida" style="height: 40px;"></a>
+        <nav>
+          <ul class="nav">
+            <li class="nav-item"><a href="index.html" class="nav-link text-white">Главная</a></li>
+            <li class="nav-item"><a href="classes.html" class="nav-link text-white">Мастер-классы</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link text-white">О нас</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">Проекты</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link text-white">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="mb-0 mt-3">По всем вопросам обращаться сюда:</p>
+      <p class="mb-0">+7 987 654 32 10</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
